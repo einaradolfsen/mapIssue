@@ -1,3 +1,14 @@
 <template>
-  ${message}
+  <h1>${message}</h1>
+  <form  repeat.for="[k,v] of map">   
+    <h2>${k} </h2>
+    <div repeat.for="language of v">
+        <input type="checkbox" model.bind="language" checked.two-way="selectedLanguages">
+        ${language}      
+    </div>
+</form>
+ <h3>selected languages:</h3>
+ <div repeat.for="language of selectedLanguages">
+   ${language}
+ </div>
 </template>
